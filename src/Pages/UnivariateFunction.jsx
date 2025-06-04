@@ -19,7 +19,7 @@ export class UnivariateFunction extends Component {
 
 
           {/* MathLive editor */}
-          <section className="p-4 w-[75%] md:w-1/2 justify-center mx-auto">
+          <section className="p-4 w-3/4 md:w-1/2 mx-auto flex flex-col items-center">
             <h2 className="pb-2">MathLive editor</h2>
 
             {/* MathField component */}

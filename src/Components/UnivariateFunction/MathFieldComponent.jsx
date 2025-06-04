@@ -9,8 +9,8 @@ export default function MathFieldComponent() {
   return (
     <math-field
         className="
-            w-[342px] h-[100px] 
-            md:w-[590px]
+            w-full 
+            h-[100px]
             rounded-xl                 
             border border-blue-200    
             shadow-sm 
