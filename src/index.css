@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* Tailwind CSS base styles */
+@theme{
+  --color-primary: #6DC9DB;
+}
+
+/* ______________________________Global Styles______________________________ */
+h1{
+  @apply 
+  text-4xl text-center font-bold p-8;
+}
+
+h2{
+  @apply 
+  text-center;
+}
+
+
+/* ______________________________Home Page______________________________ */
+.sectionHome{
+  @apply 
+  pt-8;
+}
+
+.rectangle {
+  @apply 
+    relative w-[360px] h-28 bg-[#d1fA60]/47 
+    md:w-[1197px] md:h-[145px];
+}
+
+.r-left {
+  @apply 
+    rounded-[0px_10px_10px_0px];
+}
+
+.r-right {
+  @apply 
+    rounded-[10px_0px_0px_10px] ml-auto;
+}
+
+.title {
+  @apply 
+    absolute text-2xl lg:text-[40px]
+    lg:top-[78px];
+}
+
+.t-left {
+  @apply 
+  top-[76px] left-[52px] 
+  lg:left-[122px];
+}
+
+.t-right {
+  @apply
+  top-[73px] left-[98px] 
+  lg:left-[728px];
+}
+
+.text{
+  @apply 
+  w-[70%] m-auto py-4;
+}
+
+
+/* ______________________________Univariate function Page______________________________ */
