@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 
 export class MathMLEditorComponent extends Component {
   render() {
-    // Props destructuring for better readability
-    // isVisible: Boolean to check if the editor is open or closed
+
     const { isVisible, onToggleVisibility, content, onChangeContent } = this.props;
 
     if (!isVisible) {
@@ -35,7 +34,7 @@ export class MathMLEditorComponent extends Component {
       // OPEN Status: Full MathML Editor
       return (
         <>
-            <div className="w-full min-h-[140px] p-3 rounded-[5px] border border-primary bg-yellow-50 flex flex-col">
+            <div className="w-full min-h-[140px] p-3 rounded-[5px] border border-primary bg-white flex flex-col">
 
                 <div className="flex justify-between items-center mb-1 flex-shrink-0">
                     <p className="text-xs text-gray-600">
@@ -64,8 +63,8 @@ export class MathMLEditorComponent extends Component {
                 <textarea
                     value={content}
                     onChange={onChangeContent}
-                    className="w-full flex-grow p-2 border border-gray-300 rounded font-mono text-sm focus:ring-primary focus:border-primary shadow-inner"
-                    style={{ resize: 'vertical', minHeight: '60px' }} // Valeur fixe pour minHeight, ex: 60px ou 4rem
+                    className="w-full flex-grow p-2 border border-gray-300 rounded font-mono text-sm shadow-inner"
+                    style={{ resize: 'vertical', minHeight: '60px' }} 
                     aria-label="Input for MathML expression"
                 />
             </div>
