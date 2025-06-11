@@ -1,4 +1,4 @@
-export function ColorizeMathML(mathMLString) {
+export function colorizeMathML(mathMLString) {
   const colors = [
     "hsl(210, 60%, 85%)",
     "hsl(340, 60%, 86%)",
@@ -6,6 +6,9 @@ export function ColorizeMathML(mathMLString) {
     "hsl(45, 100%, 85%)",
     "hsl(270, 60%, 85%)",
   ];
+
+  const getRandomColor = () =>
+    colors[Math.floor(Math.random() * colors.length)];
 
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(mathMLString, "application/xml");

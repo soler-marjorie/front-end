@@ -100,7 +100,7 @@ export class MathEditor extends Component {
     const {
       isMathMLEditorVisible,
       onToggleVisibility,
-      value, 
+      input, 
       mainGridClasses,
       mathMLTitleContainerClasses,
     } = this.props;
@@ -114,12 +114,13 @@ export class MathEditor extends Component {
           <MathMLEditorComponent
             isVisible={isMathMLEditorVisible}
             onToggleVisibility={onToggleVisibility}
-            content={value}
+            content={input}
             onChangeContent={this.handleTextareaChange} 
+            onChange={this.handleInputChange}
           />
         </section>
 
-        <section className="w-full flex flex-col items-center md:items-start gap-2 md:col-span-1">
+        <section className="w-full flex flex-col items-center md:items-start md:col-span-1">
           <h2 className="text-center w-full">MathLive editor</h2>
           <MathFieldComponent forwardedRef={this.mathFieldRef} />
         </section>
@@ -135,13 +136,6 @@ export class MathEditor extends Component {
             onClick={this.handleClear}
           >
             Clear
-          </button>
-          <button
-              type="button"
-              className="px-8 py-3 bg-blue-900 text-white text-sm sm:text-base rounded-lg hover:bg-blue-400 transition duration-200 shadow-md"
-              onClick={this.handleClick}
-          >
-              Convertir
           </button>
         </section>
       </section>
