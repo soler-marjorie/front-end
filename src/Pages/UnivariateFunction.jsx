@@ -4,11 +4,11 @@ import 'mathlive';
 import DOMPurify from 'dompurify';
 
 /* Components */
-import { MathEditor } from '../Components/UnivariateFunction/MathEditor'; 
-import CirclePackingMathML from '../Components/UnivariateFunction/CirclePackingMathML'; 
+import { MathEditor } from '../components/UnivariateFunction/MathEditor'; 
+import CirclePackingMathML from '../components/UnivariateFunction/CirclePackingMathML'; 
 
 /* Utils */
-import { convertPresentationToContent } from '../Components/UnivariateFunction/Utils/ConvertPresentationToContent';
+import { convertPresentationToContent } from '../Utils/convertPresentationToContent';
 
 
 

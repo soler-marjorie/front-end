@@ -1,4 +1,4 @@
-export function parseMathMLTree(mathmlString) {
+export default function mathMLToTree(mathmlString) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(mathmlString, "application/xml");
 

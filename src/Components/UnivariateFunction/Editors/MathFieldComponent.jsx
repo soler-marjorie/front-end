@@ -14,7 +14,6 @@ export class MathFieldComponent extends Component {
               h-[140px]
               rounded-xl                 
               border border-primary   
-              shadow-sm 
           "
           virtualkeyboardmode="manual"
           smartmode

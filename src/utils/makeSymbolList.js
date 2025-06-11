@@ -1,4 +1,4 @@
-export function getCiContentsFromMathML(mathmlString) {
+export function makeSymbolList(mathmlString) {
   if (!mathmlString || typeof mathmlString !== 'string') {
     console.warn("L'entrée MathML est invalide ou vide.");
     return [];

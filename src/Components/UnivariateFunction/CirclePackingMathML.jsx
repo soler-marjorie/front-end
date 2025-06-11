@@ -1,14 +1,14 @@
 // src/Components/UnivariateFunction/CirclePackingMathML.jsx
 import React from 'react';
 import { ResponsiveCirclePacking } from '@nivo/circle-packing';
-import { parseMathMLToTree } from './Utils/parseMathMLToTree';
-//import DoubleRangeSlider from '../Utils/DoubleRangeSlider'; 
+import  mathMLToTree  from '../../utils/mathMLToTree';
+import DoubleRangeSlider from './DoubleRangeSlider';
 
 class CirclePackingMathML extends React.Component {
   constructor(props) {
     super(props);
     
-    const initialData = parseMathMLToTree(this.props.mathml);
+    const initialData = mathMLToTree(this.props.mathml);
 
     this.state = {
       data: initialData,
@@ -20,7 +20,7 @@ class CirclePackingMathML extends React.Component {
 
   static getDerivedStateFromProps(props, state) {
     if (props.mathml !== state.prevMathml) {
-      const newData = parseMathMLToTree(props.mathml);
+      const newData = mathMLToTree(props.mathml);
       return {
         data: newData,
         zoomedId: newData ? newData.name : null,
@@ -71,7 +71,7 @@ class CirclePackingMathML extends React.Component {
             <div className='overflow-x-auto' dangerouslySetInnerHTML={{ __html: zoomedId }} />
           </output>
           <div className="mt-4 w-full">
-            {/* <DoubleRangeSlider /> */}
+            <DoubleRangeSlider /> 
           </div>
         </section>
       </section>
