@@ -172,8 +172,8 @@ export function formatMathML(mathml) {
   mathml = mathml.replace(/<mo[^>]*>(\u00B1|±|±|±|&PlusMinus;|&#177;)<\/mo>/g, '<mo>+</mo>');
   mathml = mathml.replace(/<mo[^>]*>−<\/mo>/g, '<mo>-</mo>');
   mathml = mathml.replace(/<mi[^>]*>abs<\/mi>/g, '<mo>abs</mo>');
-  mathml = mathml.replace(/<mfenced[^>]*>/g, '<mo>\(<\/mo>');
-  mathml = mathml.replace(/<\/mfenced[^>]*>/g, '<mo>\)<\/mo>');
+  mathml = mathml.replace(/<mfenced[^>]*>/g, '<mo>(</mo>');
+  mathml = mathml.replace(/<\/mfenced[^>]*>/g, '<mo>)</mo>');
 
   // Add mrow wrapper inside <mo>(</mo> ... <mo>)</mo> if not already present, handling nesting.
   // Loop until no more changes are made by transformParensContent.
@@ -214,7 +214,7 @@ export function formatMathML(mathml) {
       }
       let fullTag = mathml.substring(i, tagEnd + 1);
       const isClosingTag = fullTag.startsWith('</');
-      const tagNameMatch = fullTag.match(/<\/?([^\s>\/]+)/); // Extracts tag name
+      const tagNameMatch = fullTag.match(/<\/?([^\s>/]+)/); // Extracts tag name
       const tagName = tagNameMatch ? tagNameMatch[1] : null;
 
       if (isClosingTag) {
@@ -236,7 +236,7 @@ export function formatMathML(mathml) {
         if (tagName && targetTags.includes(tagName)) {
           if (!/\s+id\s*=\s*["']/.test(fullTag)) {
             idCounter++;
-            const idAttribute = ` id=\"${idCounter}\"`;
+            const idAttribute = ` id="${idCounter}"`;
 
             if (fullTag.endsWith('/>')) { 
               const tagContentBeforeSlash = fullTag.substring(0, fullTag.length - 2).trimRight();
@@ -269,5 +269,5 @@ export function formatMathML(mathml) {
 
   // Original post-processing steps. Using [a-zA-Z0-9\\-]+ for tag names in regex.
   return result.replace(/\n\n+/g, '\n').trim().replace(/^<math/, '\n<math')
-    .replace(/(<\/[a-zA-Z0-9\-]+>)(<[a-zA-Z0-9\-\/])/g, '$1\n$2');
+    .replace(/(<\/[a-zA-Z0-9-]+>)(<[a-zA-Z0-9\-/])/g, '$1\n$2');
 }

@@ -7,19 +7,21 @@ export class MathFieldComponent extends Component {
   render() {
 
     return (
-      <math-field
-          ref={this.props.forwardedRef} 
-          className="
-              w-full 
-              h-[140px]
-              rounded-xl                 
-              border border-primary   
-              shadow-sm 
-          "
-          virtualkeyboardmode="manual"
-          smartmode
-      >
-      </math-field>
+      <>
+        <math-field
+            ref={this.props.forwardedRef} 
+            className="
+                w-full 
+                h-[140px]
+                rounded-xl                 
+                border border-primary   
+            "
+            virtualkeyboardmode="manual"
+            smartmode
+        >
+        </math-field>      
+      </>
+
     );  
   }
 }
